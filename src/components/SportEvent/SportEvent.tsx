@@ -4,27 +4,13 @@ import SportEventMarket from "../SportEventMarket/SportEventMarket";
 
 export default function SportEvent(props:EventListProps) {
 
-    const listEvents = [{
-		"id": "EVT_1",
-		"name": "Real Madrid vs Barcelona",
-		"markets": []
-	},
-	{
-		"id": "EVT_2",
-		"name": "Atletico Madrid vs Malaga",
-		"markets": []
-	},
-	{
-		"id": "EVT_3",
-		"name": "Empty Event that shouldn't render",
-		"markets": []
-	}]
+    const listEvents = props.list;
 
     return(
         <div style={{ width: '100%' }}>
             <List sx={{alignItems: 'center' }}>
                 {listEvents.map((event) => (
-                    <Box 
+                    <Box key={event.id}
                     style={{ width: '100%' }}
                     sx={{border: '2px solid grey', mb: 2 }}>               
                     <Typography component="div">
@@ -38,7 +24,7 @@ export default function SportEvent(props:EventListProps) {
                             </Box>
                     </Typography>
                     <Divider />
-                    <SportEventMarket />           
+                    <SportEventMarket list={event.markets} />           
                 </Box>  
                 ))}
             </List>
@@ -49,5 +35,5 @@ export default function SportEvent(props:EventListProps) {
 }
 
 interface EventListProps{
-    list : any;
+    list : Array<[any]>;
 }
