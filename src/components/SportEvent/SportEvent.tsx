@@ -2,7 +2,7 @@ import React from "react";
 import {Box, Divider, List, Typography} from '@mui/material';
 import SportEventMarket from "../SportEventMarket/SportEventMarket";
 
-export default function SportEvent() {
+export default function SportEvent(props:EventListProps) {
 
     const listEvents = [{
 		"id": "EVT_1",
@@ -46,4 +46,8 @@ export default function SportEvent() {
 
               
     )    
+}
+
+interface EventListProps{
+    list : any;
 }
