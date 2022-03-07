@@ -7,24 +7,8 @@ import {
   Typography,
 } from "@mui/material";
 
-export default function SportEventSelection() {
-  const selectionList = [
-    {
-      id: "SEL_3",
-      name: "Ronaldo",
-      price: 1.15,
-    },
-    {
-      id: "SEL_4",
-      name: "Messi",
-      price: 1.3,
-    },
-    {
-      id: "SEL_5",
-      name: "Bale",
-      price: 1.35,
-    },
-  ];
+export default function SportEventSelection(props:EventSelectionProps) {
+  const selectionList = props.list;
 
   return (
     <div style={{ width: "100%" }}>
@@ -35,11 +19,9 @@ export default function SportEventSelection() {
                 alignItems: "center"
               }} >
         {selectionList.map((selection) => (
-            <Card
-              
-            >
+            <Card  key={selection.id}>
                 <CardContent
-                  key={selection.id}
+                 
                   sx={{
                     border: "1px solid grey",
                     m: 1,
@@ -65,4 +47,8 @@ export default function SportEventSelection() {
       </List>
     </div>
   );
+}
+
+interface EventSelectionProps {
+    list : Array<[any]>;
 }
