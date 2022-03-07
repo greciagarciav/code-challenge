@@ -1,8 +1,5 @@
 import React from "react";
-import CssBaseline from '@mui/material/CssBaseline';
-import Container from '@mui/material/Container';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
+import {CssBaseline, Container, List, ListItem  } from '@mui/material';
 import SportEvent from "../../components/SportEvent/SportEvent";
 import Cart from "../../components/Cart/Cart";
 
@@ -14,7 +11,7 @@ const EventListView = () => {
                 <Cart/>
                 <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
                      <ListItem alignItems="center"></ListItem>
-                     <SportEvent/>
+                     <SportEvent />
                 </List>
             </Container>
         </React.Fragment>
