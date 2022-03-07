@@ -26,7 +26,6 @@ const EventListView = () => {
                 <Cart/>
                 <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
                      <ListItem alignItems="center"></ListItem>
-                     
                      <SportEvent list={results} />
                 </List>
             </Container>
