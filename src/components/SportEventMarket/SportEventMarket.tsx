@@ -2,19 +2,9 @@ import React from "react";
 import { Box, List, Typography } from '@mui/material';
 import SportEventSelection from "../SportEventSelection/SportEventSelection";
 
-export default function SportEventMarket() {
+export default function SportEventMarket(props:EventMarketProps) {
 
-const marketsList = [
-    {
-        "id": "MKT_1",
-        "name": "Team to Win",
-        "selections": []
-    },
-    {
-        "id": "MKT_2",
-        "name": "Player to Score First",
-        "selections": []
-    }]
+const marketsList = props.list;
 
     return(     
         <div style={{ width: '100%' }}>
@@ -26,10 +16,14 @@ const marketsList = [
                                 {market.name}
                             </Box>
                         </Typography>
-                        <SportEventSelection />                  
+                        <SportEventSelection list={market.selections}/>                  
                     </Box>
                 ))}
             </List>
         </div>
     )
+}
+
+interface EventMarketProps {
+    list : Array<[any]>;
 }
